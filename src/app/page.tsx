@@ -1,10 +1,5 @@
-import { Form } from './components/Form/Form'
+import { DashboardView } from "@/components/admin/dashboard-view";
 
 export default function Home() {
-  return (
-    <>
-    <Form/>
-
-    </>
-  )
+  return <DashboardView />;
 }

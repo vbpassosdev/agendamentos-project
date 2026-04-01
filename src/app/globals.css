@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: #f6efec;
+  --background-strong: #f2e7e3;
+  --panel: #f9f2f0;
+  --panel-strong: #f3e8e5;
+  --foreground: #2f2424;
+  --muted-foreground: #7f6d6b;
+  --accent: #b87b73;
+  --accent-strong: #8a5a55;
+  --accent-soft: #e8c7c0;
+  --border: rgba(138, 90, 85, 0.12);
+  --font-sans: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen text-[var(--foreground)];
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 32%),
+      radial-gradient(circle at top right, rgba(236, 200, 193, 0.38), transparent 28%),
+      linear-gradient(180deg, var(--background) 0%, #f3e6e1 100%);
+  }
+
+  ::selection {
+    background: rgba(184, 123, 115, 0.22);
+  }
+
+  input::placeholder {
+    color: var(--muted-foreground);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans), sans-serif;
+  }
+}
